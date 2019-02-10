@@ -4,9 +4,10 @@ This package makes it easy to send [Mobtexting notifications](https://mobtexting
 
 ## Installation
 
-You can install the package via:
+You can install the package via pip :
 
 ``` bash
+pip install mobtexting_python
 ```
 
 ## Usage
@@ -28,5 +29,3 @@ response = client.send(
 )
 
 print response.json()
-```
-
