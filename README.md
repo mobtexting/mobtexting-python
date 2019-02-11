@@ -30,34 +30,51 @@ print response.json()
 ```
 
 ## Verify Usage
-
-### Send
-
 ```python
 from mobtexting.verify import Verify
 
 access_token = 'xxxxxxxxxxxxxxxxxx'
 
 verify = Verify(access_token)
+```
+### Send
 
+```python
 response = verify.send(
     to="1234567890",
 )
 
 print response.json()
 ```
+#### With optional paramaters
+```python
+response = verify.send(
+    to="+918318416378",
+    data = {
+        'length': 4,
+        'timeout': 600
+    }
+)
+
+print response.json()
+```
+visit [documentation](https://portal.mobtexting.com/docs/v2/verify "documentation") for a list of all parameters
+
 ### Check
 
 ```python
-from mobtexting.verify import Verify
-
-access_token = 'xxxxxxxxxxxxxxxxxx'
-
-verify = Verify(access_token)
-
 response = verify.check(
-    id='b51be650-fdb2-4633-b101-d450e8d9ec64', # id you received while sending
+    id='b51be650-fdb2-4633-b101-d450e8d9ec64', # id received while sending
     token='123456' # token entered by user
+)
+
+print response.json()
+```
+
+### Cancel
+```python
+response = verify.cancel(
+    id='4e28e081-2900-4523-aed6-a21eb39c2ae6' # id received while sending
 )
 
 print response.json()
