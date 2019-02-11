@@ -49,7 +49,7 @@ print response.json()
 #### With optional paramaters
 ```python
 response = verify.send(
-    to="+918318416378",
+    to="1234567890",
     data = {
         'length': 4,
         'timeout': 600
