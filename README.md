@@ -7,7 +7,8 @@ This package makes it easy to send [Mobtexting notifications](https://mobtexting
 You can install the package via pip :
 
 ``` bash
-pip install git+git://github.com/mobtexting/mobtexting-python.git --user
+pip instal 
+ l git+git://github.com/mobtexting/mobtexting-python.git --user
 ```
 
 ## Send SMS Usage
@@ -28,6 +29,37 @@ response = client.send(
 
 print response.json()
 ```
+##Voice
+### Voice Click2call
+```python
+from mobtexting.voice import Voice
+# enter the following details
+access_token = 'XXXXXXXXXXXXX'
+bridge="DID Number"
+_from="number with country code"
+to="Phone number with Country Code / IVR flow to which call has to connect"
+
+voice = Voice(access_token)
+response=voice.c2c( bridge, _from,  to)
+print(response.json())
+```
+### Voice  Call Logs Report
+```python
+start_date="mm/dd/yyyy"
+end_date="mm/dd/yyyy"
+response=voice.call_logs(start_date,end_date)
+print(response.json())
+```
+
+### Voice  Call Recording Report
+```python
+start_date="mm/dd/yyyy"
+end_date="mm/dd/yyyy"
+response=voice.recordings(start_date,end_date)
+print(response.json())
+```
+visit [documentation](https://portal.mobtexting.com/docs/v2/verify "documentation") for a list of all parameters
+
 
 ## Verify Usage
 ```python
